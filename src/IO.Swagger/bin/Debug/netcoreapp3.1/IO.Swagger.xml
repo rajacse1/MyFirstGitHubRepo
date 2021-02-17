@@ -1,0 +1,549 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IO.Swagger</name>
+    </assembly>
+    <members>
+        <member name="T:IO.Swagger.Attributes.ValidateModelStateAttribute">
+            <summary>
+            Model state validation attribute
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Attributes.ValidateModelStateAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Called before the action method is invoked
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:IO.Swagger.Controllers.DefaultApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Controllers.DefaultApiController.GetItems(System.Nullable{System.Int32})">
+            <summary>
+            Get items from the database
+            </summary>
+            <remarks>Pull a list of items from item database</remarks>
+            <param name="list">Number of items to be displayed</param>
+            <response code="200">OK - Successful pull of items</response>
+        </member>
+        <member name="T:IO.Swagger.Controllers.ItemApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Controllers.ItemApiController.GetItemsItemId(System.Nullable{System.Int32})">
+            <summary>
+            Get item details from the database 
+            </summary>
+            <remarks>Obtain item details from item database</remarks>
+            <param name="itemId">Id of the item to pull details of</param>
+            <response code="200">OK - Successfully obtained order details</response>
+            <response code="400">Bad Request - Invalid item ID supplied</response>
+            <response code="404">Not Found - Item not found</response>
+        </member>
+        <member name="T:IO.Swagger.Controllers.OrderApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Controllers.OrderApiController.GetOrdersOrderId(System.Nullable{System.Int32})">
+            <summary>
+            Get order details from database
+            </summary>
+            <remarks>Obtain item details from the database</remarks>
+            <param name="orderId"></param>
+            <response code="200">OK - Successfully obtained order details</response>
+            <response code="400">Bad Request - Invalid order ID supplied</response>
+            <response code="404">Not Found - Order not found</response>
+        </member>
+        <member name="T:IO.Swagger.Controllers.OrdersApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Controllers.OrdersApiController.GetOrders(System.Nullable{System.Int32})">
+            <summary>
+            Get orders from the database 
+            </summary>
+            <remarks>Obtain order details from orders database</remarks>
+            <param name="list">Number of orders to show</param>
+            <response code="200">OK - Successful pull of orders</response>
+        </member>
+        <member name="M:IO.Swagger.Controllers.OrdersApiController.PostOrders(IO.Swagger.Models.Body)">
+            <summary>
+            Post order details to the database
+            </summary>
+            <remarks>Post item order to orders database</remarks>
+            <param name="body">Body example</param>
+            <response code="201">OK - Order created</response>
+        </member>
+        <member name="T:IO.Swagger.Filters.BasePathFilter">
+            <summary>
+            BasePath Document Filter sets BasePath property of Swagger and removes it from the individual URL paths
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Filters.BasePathFilter.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="basePath">BasePath to remove from Operations</param>
+        </member>
+        <member name="P:IO.Swagger.Filters.BasePathFilter.BasePath">
+            <summary>
+            Gets the BasePath of the Swagger Doc
+            </summary>
+            <returns>The BasePath of the Swagger Doc</returns>
+        </member>
+        <member name="M:IO.Swagger.Filters.BasePathFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Apply the filter
+            </summary>
+            <param name="swaggerDoc">OpenApiDocument</param>
+            <param name="context">FilterContext</param>
+        </member>
+        <member name="T:IO.Swagger.Filters.GeneratePathParamsValidationFilter">
+            <summary>
+            Path Parameter Validation Rules Filter
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Filters.GeneratePathParamsValidationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="operation">Operation</param>
+            <param name="context">OperationFilterContext</param>
+        </member>
+        <member name="T:IO.Swagger.Models.BadRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.BadRequest.Error">
+            <summary>
+            Gets or Sets Error
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequest.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequest.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequest.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequest.Equals(IO.Swagger.Models.BadRequest)">
+            <summary>
+            Returns true if BadRequest instances are equal
+            </summary>
+            <param name="other">Instance of BadRequest to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequest.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:IO.Swagger.Models.BadRequestError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.BadRequestError.Message">
+            <summary>
+            Gets or Sets Message
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequestError.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequestError.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequestError.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequestError.Equals(IO.Swagger.Models.BadRequestError)">
+            <summary>
+            Returns true if BadRequestError instances are equal
+            </summary>
+            <param name="other">Instance of BadRequestError to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.BadRequestError.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:IO.Swagger.Models.Body">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Body.Item">
+            <summary>
+            Gets or Sets Item
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Body.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.Body.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Body.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Body.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Body.Equals(IO.Swagger.Models.Body)">
+            <summary>
+            Returns true if Body instances are equal
+            </summary>
+            <param name="other">Instance of Body to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Body.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:IO.Swagger.Models.Item">
+            <summary>
+            Model containing item information
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Item.ItemId">
+            <summary>
+            Gets or Sets ItemId
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Item.Name">
+            <summary>
+            Gets or Sets Name
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Item.Price">
+            <summary>
+            Gets or Sets Price
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Item.Description">
+            <summary>
+            Gets or Sets Description
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.Item.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Item.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Item.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Item.Equals(IO.Swagger.Models.Item)">
+            <summary>
+            Returns true if Item instances are equal
+            </summary>
+            <param name="other">Instance of Item to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Item.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:IO.Swagger.Models.Items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.Items.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Items.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Items.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Items.Equals(IO.Swagger.Models.Items)">
+            <summary>
+            Returns true if Items instances are equal
+            </summary>
+            <param name="other">Instance of Items to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Items.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:IO.Swagger.Models.NotFound">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.NotFound.Error">
+            <summary>
+            Gets or Sets Error
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.NotFound.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.NotFound.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.NotFound.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.NotFound.Equals(IO.Swagger.Models.NotFound)">
+            <summary>
+            Returns true if NotFound instances are equal
+            </summary>
+            <param name="other">Instance of NotFound to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.NotFound.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:IO.Swagger.Models.Order">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Order.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Order.OrderTotal">
+            <summary>
+            Gets or Sets OrderTotal
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Order.OrderDate">
+            <summary>
+            Gets or Sets OrderDate
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Order.ArrivalDate">
+            <summary>
+            Gets or Sets ArrivalDate
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Order.Items">
+            <summary>
+            Gets or Sets Items
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Order.OrderId">
+            <summary>
+            Gets or Sets OrderId
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.Order.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Order.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Order.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Order.Equals(IO.Swagger.Models.Order)">
+            <summary>
+            Returns true if Order instances are equal
+            </summary>
+            <param name="other">Instance of Order to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Order.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:IO.Swagger.Models.Orders">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.Orders.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Orders.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Orders.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Orders.Equals(IO.Swagger.Models.Orders)">
+            <summary>
+            Returns true if Orders instances are equal
+            </summary>
+            <param name="other">Instance of Orders to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Orders.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:IO.Swagger.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:IO.Swagger.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Create the web host builder.
+            </summary>
+            <param name="args"></param>
+            <returns>IWebHostBuilder</returns>
+        </member>
+        <member name="T:IO.Swagger.Security.ApiKeyAuthenticationHandler">
+            <summary>
+            class to handle api_key security.
+            </summary>
+        </member>
+        <member name="F:IO.Swagger.Security.ApiKeyAuthenticationHandler.SchemeName">
+            <summary>
+            scheme name for authentication handler.
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Security.ApiKeyAuthenticationHandler.HandleAuthenticateAsync">
+            <summary>
+            verify that require api key header exist and handle authorization.
+            </summary>
+        </member>
+        <member name="T:IO.Swagger.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="env"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:IO.Swagger.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:IO.Swagger.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="loggerFactory"></param>
+        </member>
+    </members>
+</doc>
